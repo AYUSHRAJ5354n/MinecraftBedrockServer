@@ -15,6 +15,11 @@ RUN apt-get update && apt-get install -y \
     findutils \
     pigz
 
+# Create a non-root user and switch to it
+RUN useradd -m minecraft
+USER minecraft
+WORKDIR /home/minecraft
+
 # Copy the setup script
 COPY SetupMinecraft.sh .
 
