@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     pigz
 
 # Create a non-root user and switch to it
-RUN useradd -m minecraft
+RUN useradd -m minecraft && echo "minecraft ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER minecraft
 WORKDIR /home/minecraft
 
