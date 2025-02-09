@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     net-tools \
     gawk \
     openssl \
-    xargs \
+    findutils \
     pigz
 
 # Copy the setup script
